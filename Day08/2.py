@@ -39,10 +39,10 @@ with open(r"input.txt") as f:
         for code in six_digit_codes:
             if not(code_1[0] in code and code_1[1] in code):
                 code_6 = code
-            elif len(set(code) - set(code_4)) == 2:
-                code_9 = code
             else:
-                code_0 = code
+                for c in code_4_8_diff:
+                    if c not in code:
+                        code_9 = code
 
         six_digit_codes.remove(code_6)
         six_digit_codes.remove(code_9)
